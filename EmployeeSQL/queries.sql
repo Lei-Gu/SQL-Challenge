@@ -9,8 +9,7 @@ ON e.emp_no =salaries.emp_no;
 -- 2. List employees who were hired in 1986.
 SELECT e.emp_no, e.last_name, e.first_name, e.hire_date
 FROM employees as e
-WHERE e.hire_date > '12/31/1985'
-
+WHERE (select extract(year from hire_date) = 1986);
 
 -- 3. List the manager of each department with the following information: 
 --    department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
